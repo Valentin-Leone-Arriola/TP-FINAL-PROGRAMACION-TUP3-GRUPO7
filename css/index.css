@@ -1,0 +1,178 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    background-color: #ffffff;
+    overflow-x: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.pagewrap{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+}
+
+.product-padre{
+    flex-grow: 1;
+    flex-wrap: wrap;
+    
+    position: relative;
+    width: 100%;
+    top: 11vh;
+    z-index: 0;
+    
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+}
+    
+.new-arrivals-title{
+    font-weight: 600;
+}
+
+.card{
+    border: none;
+    overflow: hidden;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.card img{
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.card-img-top:hover{
+    opacity: 0;
+}
+
+.card#buzo1:hover{
+    background-image: url(../img/ropa/buzo2.webp);
+
+}
+
+.card#buzo2:hover{
+    background-image: url(../img/ropa/buzo1.webp);
+
+}
+
+.card#remera1:hover{
+    background-image: url(../img/ropa/remera2.webp);
+
+}
+
+.card#remera2:hover{
+    background-image: url(../img/ropa/remera1.webp);
+
+}
+
+.card#pantalon1:hover{
+    background-image: url(../img/ropa/pantalon2.webp);
+
+}
+
+.card#pantalon2:hover{
+    background-image: url(../img/ropa/pantalon1.webp);
+
+}
+
+.extra-info{
+    flex-grow: 1;
+    flex-wrap: wrap;
+    
+    position: relative;
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    
+    justify-items: center;
+}
+
+.owl-prev{
+    left: 0;
+    height: 40px;
+}
+
+.owl-next{
+    right: 0;
+}
+
+.owl-dots{
+    display: none;
+}
+
+.owl-nav .owl-prev:hover, .owl-nav .owl-next:hover{
+    background: none !important;
+    outline: none !important;
+    opacity: 1;
+}
+
+    
+
+
+
+@media (min-width: 720px){
+
+    .cont-carousel{
+        padding: 5% 5%;
+    }
+
+    .card{
+        height: 300px;
+        width: auto;
+        margin: 0;
+        justify-content: center;
+        background-size: auto 300px;
+    }
+
+    .card-img-top{
+        width: 100%;
+        height: auto;
+    }
+
+    .owl-nav .owl-prev, .owl-nav .owl-next{
+        outline: none;
+        opacity: 0.6;
+        transition: all .5s ease;
+    }
+
+    .owl-nav{
+        position: relative;
+        top: -32vh;
+        justify-content: center;
+    }
+
+    .owl-prev{
+        position: absolute;
+    }
+
+    .owl-next{
+        position: absolute;
+    }
+
+    button img {
+        height: 35px;
+    }    
+
+    .extra-info{
+        top: 10vh;
+        padding-left: 15%;
+        padding-right: 12.5%;
+
+        grid-column-gap: 5%;
+        grid-row-gap: 10px;
+        
+    
+    }
+
+    .extra-info-item{
+        position: relative;
+        padding: 3em 0ex;
+        width: fit-content;
+
+    }
+}

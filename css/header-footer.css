@@ -1,0 +1,163 @@
+.header, .footer{
+    background-color: #ffffff;
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    z-index: 300;
+    align-items: center;
+
+    width: 100%;
+    height: 10vh;
+    padding: 10px 0;
+}
+
+.header img{
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+#menu img {
+    height: 100%;
+}
+
+#logo img{
+    height: 100%;
+}
+
+#utilities img {
+    margin: 0 1ex;
+    height: 80%;
+    width: auto;
+}
+
+#utilities input {
+    background-color: transparent;
+    border: solid 0.33ex #888;
+    border-radius: 1ex;
+    padding-left: 1ex;
+    height: 30px;
+    font-size: small;
+}
+
+
+.original-reference a{
+    text-decoration: underline;
+    text-decoration-color: white;
+}
+
+.footer{
+    position: relative;
+    display: flex;
+    
+    background-color: #222222;
+    color: white;
+    
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+}
+
+/* COMPUTER */
+@media (min-width: 760px){
+
+    
+    #menu {
+        position: absolute;
+        top: 3vh;
+        left: 1.5%;
+        height: 4vh;
+        width: auto;
+        align-items: center;
+    }
+    
+    #logo {
+        display: flex;
+        position: absolute;
+        justify-content: center;
+        height: 8vh;
+        width: auto;
+        left: 45vw;
+        right: 45vw;
+    }
+        
+    #utilities {
+        position: absolute;
+        display: flex;
+        top: 2.625vh;
+        right: 0.25vw;
+        height: 4.75vh;
+        width: auto;
+    }
+
+    #utilities input {
+        margin-right: 20px;
+        padding: 1ex;
+    }
+    
+    .original-reference{
+        font-size: smaller;
+    }    
+
+    .footer{
+        top: 10vh;
+        height: 8vh;
+        padding: 10px 10px;
+    }
+
+}
+
+/* TABLET? */
+@media (min-width: 430px) and (max-width: 759px){
+}
+
+/* MOBILE */
+@media (max-width: 430px){
+
+    .header{
+        justify-content: center;
+        justify-content: space-between;
+    }
+
+    #menu {
+        position: relative;
+        left: 1.5%;
+        height: 4vh;
+        width: auto;
+        align-items: center;
+    }
+    
+    #logo {
+        display: flex;
+        position: relative;
+        justify-content: center;
+        height: 8vh;
+        width: auto;
+    }
+        
+    #utilities {
+        display: flex;
+        position: relative;
+        height: 4.75vh;
+        width: fit-content;
+    }
+
+    #utilities input {
+        margin-right: 10px;
+        width: 125px;
+    }
+
+    .footer{
+        top: 30vh;
+        font-size: 85%;
+        padding: 10px 10px;
+    }
+
+}
