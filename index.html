@@ -22,11 +22,35 @@
 <body>
     <div class="page-wrap">
 
+      <!--newsletter-->
+
+      <dialog open class="modal">
+        <div class="modal__content">
+        <h2 class="modal__title">Ventana modal</h2>
+        <p class="modal__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum labore reprehenderit tempora nesciunt consectetur exercitationem dignissimos vitae soluta, vel deleniti at minima, dolor architecto dolorum nobis? Nisi itaque eligendi voluptates. Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit minima vel enim ipsa atque sit maxime unde eaque quaerat nobis, minus alias excepturi tempore quam et accusamus dicta perspiciatis inventore?</p>
+        <form method="dialog">
+            <button class="modal__close-button">X</button>
+        </form>
+        </div>
+    </dialog>
+
       <!-- header -->
       <special-header></special-header>
 
     
         <!-- Cuerpo de página (todo lo que está por debajo del header) -->
+      
+        <img class="main-img" alt="main-image" src="./resources/img/ropa/harvey-main.jpg">
+        
+        <div class="ticker-wrap"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translateX" target="_blank" title="Click here know more about discounts and payment methods" class="ticker-link"></a>
+          <div class="ticker">
+            <div class="ticker-item">Letterpress chambray brunch.</div>
+            <div class="ticker-item" >Vice mlkshk crucifix beard chillwave meditation hoodie asymmetrical Helvetica Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae nisi nemo nostrum veritatis sapiente, praesentium magnam nulla aperiam unde odit voluptate voluptatum sint incidunt ipsam? Sed delectus voluptatibus ut dolor!</div>
+            <div class="ticker-item">Ugh PBR&B kale chips Echo Park.</div>
+            <div class="ticker-item">Gluten-free mumblecore chambray mixtape food truck. </div>
+          </div>
+        </div>
+
         <div class="product-padre">
           <br>
           <h2 class="text-center"><span class="new-arrivals-title">NEW ARRIVALS</span></h2>
@@ -37,7 +61,7 @@
                 <div class="item">
                   <div class="card" id="buzo1">
                     <div class="card-body">
-                      <a href="#"><img src="img/ropa/buzo1.webp" alt="" class="card-img-top"></a>
+                      <a href="#"><img src="./resources/img/ropa/buzo1.webp" alt="" class="card-img-top"></a>
                     </div>
                   </div>
                 </div>
@@ -45,7 +69,7 @@
                 <div class="item">
                   <div class="card" id="pantalon1">
                     <div class="card-body">
-                      <img src="img/ropa/pantalon1.webp" alt="" class="card-img-top">
+                      <img src="./resources/img/ropa/pantalon1.webp" alt="" class="card-img-top">
                     </div>
                   </div>
                 </div>
@@ -53,7 +77,7 @@
                 <div class="item">
                   <div class="card" id="remera1">
                     <div class="card-body">
-                      <img src="img/ropa/remera1.webp" alt="" class="card-img-top">
+                      <img src="./resources/img/ropa/remera1.webp" alt="" class="card-img-top">
                     </div>
                   </div>
                 </div>
@@ -61,7 +85,7 @@
                 <div class="item">
                   <div class="card" id="buzo2">
                     <div class="card-body">
-                      <img src="img/ropa/buzo2.webp" alt="" class="card-img-top">
+                      <img src="./resources/img/ropa/buzo2.webp" alt="" class="card-img-top">
                     </div>
                   </div>
                 </div>
@@ -69,7 +93,7 @@
                 <div class="item">
                   <div class="card" id="pantalon2">
                     <div class="card-body">
-                      <img src="img/ropa/pantalon2.webp" alt="" class="card-img-top">
+                      <img src="./resources/img/ropa/pantalon2.webp" alt="" class="card-img-top">
                     </div>
                   </div>
                 </div>
@@ -77,7 +101,7 @@
                 <div class="item">
                   <div class="card" id="remera2">
                     <div class="card-body">
-                      <img src="img/ropa/remera2.webp" alt="" class="card-img-top">
+                      <img src="./resources/img/ropa/remera2.webp" alt="" class="card-img-top">
                     </div>
                   </div>
                 </div>
@@ -109,9 +133,10 @@
                 +54 9 11 xxxx-xxxx
             </div>
         </div>
+       
+      <div><special-footer></special-footer></div>
+      
 
-        <special-footer></special-footer>
-        
     </div>
 
 
@@ -127,9 +152,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     
-    <script src="./index.js"></script>
+    <script src="./js/index.js"></script>
     
-    <script src="./header-footer.js"></script>
+    <script src="./js/header-footer.js"></script>
 </body>
 
 </html>

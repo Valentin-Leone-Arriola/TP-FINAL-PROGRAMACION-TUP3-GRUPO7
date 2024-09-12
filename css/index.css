@@ -15,9 +15,56 @@ body{
     min-height: 100vh; 
 }
 
+.main-img{
+    width: 100vw;
+    height: 95vh;
+}
+
+@keyframes ticker-animation{
+    0% {transform: translatex(0);}/*dice que el comienzo de la animacion 0% mueve el eje x en 0)*/
+    100% {transform: translateX(-200%);}/*al terminar la animacion termina en -200%, es decir en el item 3. Si fuesen 4 items deberia ser -300% y asi)*/
+}
+
+.ticker{
+    display: flex;
+    animation: linear ticker-animation 20s infinite;/*linear establece el timing, siempre misma velocidad, infinite no para*/
+}
+
+.ticker:hover{
+    animation-play-state: paused; /*para la animacion al poner el cursor encima*/
+}
+
+.ticker-item{
+    text-align: center;
+    width: 100%;
+    flex-shrink: 0;/*Dice cuanto se va a achicar un item en relacion a otros items flex al distribuirse el espacio. Al ser 0 el div va a ocupar todo el espacio disponible. Al ocupar un div 100% va a dejar sin lugar a los otros divs con otros textos que tendran un overflow fuera del container padre ticker*/
+}
+.ticker-wrap{
+    align-items: center;
+    background-color: grey;
+    width: 100%;
+    color: #000;
+    font-size: 1em;
+    font-family: inherit;
+    box-sizing: border-box;
+    overflow: hidden;
+    /*es el fondo del ticker que va a hacer que no se mueva todo*/
+    z-index: 500;
+    height: 5vh;
+    padding: 0;
+    position: fixed;
+}
+
+.ticker-link{
+    text-decoration: none;
+    color: #000;
+} 
+
+
+
 .product-padre{
     flex-grow: 1;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     
     position: relative;
     width: 100%;
@@ -46,36 +93,36 @@ body{
 }
 
 .card-img-top:hover{
-    opacity: 0;
+    opacity: 0; 
 }
 
 .card#buzo1:hover{
-    background-image: url(../img/ropa/buzo2.webp);
+    background-image: url(../resources/img/ropa/buzo2.webp);
 
 }
 
 .card#buzo2:hover{
-    background-image: url(../img/ropa/buzo1.webp);
+    background-image: url(../resources/img/ropa/buzo1.webp);
 
 }
 
 .card#remera1:hover{
-    background-image: url(../img/ropa/remera2.webp);
+    background-image: url(../resources/img/ropa/remera2.webp);
 
 }
 
 .card#remera2:hover{
-    background-image: url(../img/ropa/remera1.webp);
+    background-image: url(../resources/img/ropa/remera1.webp);
 
 }
 
 .card#pantalon1:hover{
-    background-image: url(../img/ropa/pantalon2.webp);
+    background-image: url(../resources/img/ropa/pantalon2.webp);
 
 }
 
 .card#pantalon2:hover{
-    background-image: url(../img/ropa/pantalon1.webp);
+    background-image: url(../resources/img/ropa/pantalon1.webp);
 
 }
 
@@ -111,9 +158,11 @@ body{
     opacity: 1;
 }
 
-    
+div:has(special-footer){
+    padding-bottom: 45px;
+}
 
-
+/*COMPUTER*/
 
 @media (min-width: 720px){
 
@@ -176,3 +225,4 @@ body{
 
     }
 }
+
