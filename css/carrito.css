@@ -18,21 +18,16 @@ body{
 .product-padre{
     position: relative;
     width: 100%;
-    top: 11vh;
+    top: 10vh;
     z-index: 0;
     padding: 5.5% 0;    
 }
 
-.shopping-steps{
-    position: relative;
-    width: fit-content;
-    left: 3.5%;
-}
-
-.shopping-steps img{
-    width: 16px;
-    position: relative;
-    top: 2px;
+.body-cont{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* border: solid; */
 }
 
 .product-table{
@@ -91,7 +86,7 @@ body{
     transition: all .2s ease;
 }
 
-.summary-table{
+/* .summary-table{
     border: solid 0.35ex #777;
     display: block;
     border-radius: 0.5ex;
@@ -143,9 +138,12 @@ body{
 
 .continue-shopping a:hover{
     text-decoration: underline;
+} */
+
+cart-summary-table{
+    width: 28%;
+    margin-right: 2%;
 }
-
-
 
 
 
@@ -157,8 +155,8 @@ body{
         grid-template-columns: repeat(7, 1fr);
         grid-column-gap: 0.5ex;  
         border: solid 0.35ex #777;
-        width: 65%;
-        left: 3.5%;
+        width: 60%;
+        left: 8%;
         padding: 2em 1.5em 0 ;
     }
 
@@ -210,7 +208,7 @@ body{
         width: 20%;
     }
 
-    .summary-table{
+    /* .summary-table{
         position: absolute;
         top: 23vh;
         right: 1.5%;
@@ -221,7 +219,7 @@ body{
     .continue-shopping{
         font-size: 75%;
         padding-top: 1.5ex;
-    }
+    } */
 
 }
 
@@ -297,7 +295,7 @@ body{
         width: 7px;
     }
 
-    .summary-table{
+    /* .summary-table{
         position: relative;
         top: 12vh;
         left: 12.5%;
@@ -308,7 +306,7 @@ body{
     .continue-shopping{
         font-size: 85%;
         padding-top: 1.75ex;
-    }
+    } */
 
 
 }

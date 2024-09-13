@@ -1,0 +1,11 @@
+.shopping-steps{
+    padding-left: 8%;
+    font-family: sans-serif;
+}
+
+.shopping-steps img{
+    width: 16px;
+    position: relative;
+    top: 2px;
+}
+

@@ -7,6 +7,8 @@
 
     <link rel="stylesheet" href="./css/identificacion.css">
     <link rel="stylesheet" href="./css/header-footer.css">
+    <link rel="stylesheet" href="./css/shopping-steps.css">
+    <link rel="stylesheet" href="./css/summary-table.css">
 </head>
 <body>
     <div class="page-wrap">
@@ -14,20 +16,9 @@
 
     <div class="product-padre">
         
+        <shopping-steps></shopping-steps>
         <br>
-        <div class="shopping-steps">
-            Carrito
-            <img src="./resources/img/006-next.png">
-            Identificacion
-            <img src="./resources/img/006-next.png">
-            Entrega
-            <img src="./resources/img/006-next.png">
-            Pago
-            <img src="./resources/img/006-next.png">
-            Confirmacion
-        </div>
-        <br>
-        <div class="body-cont">
+        <div id="payment-body-cont" class="body-cont">
             <div class="confirming-shopping-steps">
 
                 <div class="id-table">
@@ -110,56 +101,9 @@
                     </div>
                 </div>
             </div>
+
+                <payment-summary-table></payment-summary-table>
             
-                
-                
-                <div class="summary-table">
-                    <div class="cart_summary-table">
-                        <span class="summary-back-to-cart">Volver a carrito</span>
-                        <span class="summary-title">Resumen de la compra</span>
-
-                        <br>
-                        <hr>
-
-                        <div class="recipe-coupon">
-                            <label>USAR CUPÓN DE DESCUENTO</label>
-                            <br>
-                            <div class="coupon-code">
-                                <input type="text" placeholder="Código">
-                                <button class="add-coupon">Añadir</button>
-                            </div>
-                        </div>
-                        <br>
-                        <hr class="recipe-hr">
-
-                        <div class="summary-product-prices">
-
-                            <div class="recipe-title">Subtotal</div>
-                            <div class="recipe-price">
-                                <span>$ precio</span>
-                            </div>
-
-                            <div class="recipe-title">Descuentos</div>
-                            <div class="recipe-price">
-                                <span>$ subtotal</span>
-                            </div>
-
-                            <div class="recipe-title">Gastos del envío</div>
-                            <div class="recipe-price">
-                                <span>$ envio</span>
-                            </div>
-
-                            <hr class="recipe-hr">
-
-                            <div class="recipe-title"><span class="total-price">Total</span></div>
-                            <div class="recipe-price">
-                                <span class="total-price">$ total</span>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                
         </div>
     </div>
     
@@ -168,5 +112,7 @@
 
 
 <script src="./js/header-footer.js"></script>
+<script src="./js/shopping-steps.js"></script>
+<script src="./js/summary-table.js"></script>
 </body>
 </html>
