@@ -97,32 +97,32 @@ body{
 }
 
 .card#buzo1:hover{
-    background-image: url(../resources/img/ropa/buzo2.webp);
+    background-image: url(../resources/img/ropa/buzo1back.webp);
 
 }
 
 .card#buzo2:hover{
-    background-image: url(../resources/img/ropa/buzo1.webp);
+    background-image: url(../resources/img/ropa/buzo2back.webp);
 
 }
 
 .card#remera1:hover{
-    background-image: url(../resources/img/ropa/remera2.webp);
+    background-image: url(../resources/img/ropa/remera1back.webp);
 
 }
 
 .card#remera2:hover{
-    background-image: url(../resources/img/ropa/remera1.webp);
+    background-image: url(../resources/img/ropa/remera2back.webp);
 
 }
 
 .card#pantalon1:hover{
-    background-image: url(../resources/img/ropa/pantalon2.webp);
+    background-image: url(../resources/img/ropa/pantalon1back.webp);
 
 }
 
 .card#pantalon2:hover{
-    background-image: url(../resources/img/ropa/pantalon1.webp);
+    background-image: url(../resources/img/ropa/pantalon2back.webp);
 
 }
 
