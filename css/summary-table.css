@@ -92,17 +92,16 @@
 }
 
 /* BOTONES CONFIRMACION/VOLVER */
-.confirm-purchase button{
+.go-confirm-purchase button{
     width: 100%;
     background-color: #222222;
     color: white;
     font-weight: 700;
     font-family: sans-serif;
-    border-radius: 1em;
     padding: 1.25ex 0;
 }
 
-.confirm-purchase button:hover{
+.go-confirm-purchase button:hover{
     background-color: #555555;
 }
 

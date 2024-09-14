@@ -36,7 +36,6 @@ body{
 .confirming-shopping-steps{
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
     width: 60%;
 }
 
@@ -55,7 +54,7 @@ body{
     color: rgb(30, 30, 30);
 }
 
-.id-table, .shipment-table, .payment-table{
+.cart-steps-table{
     border: solid 1px;
     padding: 1em 1.5em;
 }
@@ -98,12 +97,12 @@ input{
     box-shadow: rgba(14, 30, 37, 0.32) 0px 0px 4px 1px;
 }
 
-.id-confirm-button{
+.cart-confirm-button{
     text-align: center;
     justify-content: center;
 }
 
-.id-confirm-button button{
+.cart-confirm-button button{
     background-color: rgb(30, 30, 30);
     outline: none;
     color: white;
@@ -130,6 +129,10 @@ input{
     border: solid 1px lightgray;
 }
 
+.shipment-buttons button:hover{
+    opacity: 0.75;
+}
+
 .shipment-buttons .ship{
     background-color: rgb(164, 134, 82);
     color: white;
@@ -137,6 +140,10 @@ input{
 
 .shipment-buttons .pickup{
     background-color: white;
+}
+
+.shipment-buttons .pickup:hover{
+    background-color: rgb(230, 230, 230);
 }
 
 /* TABLA PAGOS */
@@ -156,3 +163,7 @@ payment-summary-table{
     width: 35%;
 }
 
+/* TABLA CONFIRMACION */
+.confirm-purchase{
+    border: solid 1px;
+}

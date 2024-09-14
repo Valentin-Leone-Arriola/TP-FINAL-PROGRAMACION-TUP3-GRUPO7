@@ -23,10 +23,6 @@ body{
     padding: 5.5% 0;    
 }
 
-.step-carrito{
-    opacity: 1 !important;
-}
-
 .body-cont{
     display: flex;
     flex-wrap: wrap;

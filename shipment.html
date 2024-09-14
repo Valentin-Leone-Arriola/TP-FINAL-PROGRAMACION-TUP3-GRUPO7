@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./css/summary-table.css">
 
     <style>
-        .step-identificacion{
+        .step-entrega{
             opacity: 1;
         }
     </style>
@@ -29,50 +29,38 @@
 
                 <div class="cart-steps-table">
                     <p><span class="shopping-confirm-number">1.</span> <span class="shopping-confirm-title">Identificación</span></p>
-                    <br>
-                    Solicitamos unicamente la informacion personal para la finalizacion de la compra
-                    <br><br>
-                    <label>Correo:</label>
-                    <br>
-                    correo@example.com.ar
-                    <br><br>
-                    <div class="dobleInput">
-                        <div class="input-cont">
-                            <label>Nombre/s</label>
-                            <br>
-                            <input type="text" required>
-                        </div>
-
-                        <div class="input-cont">
-                            <label>Apellido/s</label>
-                            <br>
-                            <input type="text" required>
-                        </div>  
-
-                        <div class="input-cont">
-                            <label>DNI (sin puntos ni guiones)</label>
-                            <br>
-                            <input type="number" required>
-                        </div>
-                        <div class="input-cont">
-                            <label>Telefono / Celular</label>
-                            <br>
-                            <input type="tel" required>
-                        </div>  
-                    </div> 
-                    <br>
-                    <div class="cart-confirm-button">
-                        <a href="./shipment.html">
-                            <button type="submit">CONTINUAR</button>
-                        </a>
-                    </div>
-                    
                 </div>
 
                 <br>
 
                 <div class="cart-steps-table">
                     <p><span class="shopping-confirm-number">2.</span> <span class="shopping-confirm-title">Envío</span></p>
+                    <br>
+                    <div class="shipment-buttons">
+                        <button class="ship">
+                            Enviar
+                            <br>
+                            <span class="shipment-button-text">a la dirección</span>
+                        </button>
+                        <button class="pickup">
+                            Retiro
+                            <br>
+                            <span class="shipment-button-text">en local</span>
+                        </button>
+                    </div>
+                    <br><br>
+                    <label>Dirección:</label>
+                    <br>
+                    <div class="input-cont">
+                        <input type="text" placeholder="Ej.: Av. del Libertador 1473, Buenos Aires">
+                    </div>
+                    <br>
+                    <div class="cart-confirm-button">
+                        <a href="./payment.html">
+                            <button type="submit">CONTINUAR</button>
+                        </a>
+                    </div>
+
                 </div>
 
                 <br>

@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./css/summary-table.css">
 
     <style>
-        .step-identificacion{
+        .step-confirmacion{
             opacity: 1;
         }
     </style>
@@ -28,58 +28,67 @@
             <div class="confirming-shopping-steps">
 
                 <div class="cart-steps-table">
-                    <p><span class="shopping-confirm-number">1.</span> <span class="shopping-confirm-title">Identificación</span></p>
+                    
+                    <p><span class="shopping-confirm-title">Confirmación</span></p>
                     <br>
-                    Solicitamos unicamente la informacion personal para la finalizacion de la compra
-                    <br><br>
-                    <label>Correo:</label>
+                    Por favor, confirme sus datos antes de finalizar la compra.
                     <br>
-                    correo@example.com.ar
                     <br><br>
                     <div class="dobleInput">
                         <div class="input-cont">
                             <label>Nombre/s</label>
                             <br>
-                            <input type="text" required>
+                            <span class="data-confirmation"></span>
+                            Apellido/s, Nombre/s
                         </div>
 
                         <div class="input-cont">
-                            <label>Apellido/s</label>
+                            <label>Correo:</label>
                             <br>
-                            <input type="text" required>
+                            <span class="data-confirmation">
+                                correo@example.com.ar
+                            </span>
                         </div>  
 
                         <div class="input-cont">
                             <label>DNI (sin puntos ni guiones)</label>
                             <br>
-                            <input type="number" required>
+                            <span class="data-confirmation">
+                                12.345.678
+                            </span>
                         </div>
                         <div class="input-cont">
                             <label>Telefono / Celular</label>
                             <br>
-                            <input type="tel" required>
+                            <span class="data-confirmation">
+                                +54 9 341 XXX-XXXX
+                            </span>
+                        </div>  
+
+                        <div class="input-cont">
+                            <label>Dirección</label>
+                            <br>
+                            <span class="data-confirmation">
+                                Av. del Libertador 1473, Buenos Aires
+                            </span>
+                        </div>
+                        <div class="input-cont">
+                            <label>Método de pago</label>
+                            <br>
+                            <span class="data-confirmation">
+                                Tarjeta de ${crédito}(futuro js)
+                            </span>
                         </div>  
                     </div> 
-                    <br>
+                    <br><br>
                     <div class="cart-confirm-button">
                         <a href="./shipment.html">
-                            <button type="submit">CONTINUAR</button>
+                            <button type="submit">FINALIZAR COMPRA</button>
                         </a>
                     </div>
                     
                 </div>
 
-                <br>
-
-                <div class="cart-steps-table">
-                    <p><span class="shopping-confirm-number">2.</span> <span class="shopping-confirm-title">Envío</span></p>
-                </div>
-
-                <br>
-
-                <div class="cart-steps-table">
-                    <p><span class="shopping-confirm-number">3.</span> <span class="shopping-confirm-title">Pago</span></p>
-                </div>
             </div>
 
                 <payment-summary-table></payment-summary-table>
