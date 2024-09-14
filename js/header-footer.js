@@ -1,6 +1,6 @@
 class SpecialHeader extends HTMLElement {
     connectedCallback(){
-        this.innerHTML = '<div id="menu"><img src="./resources/img/menu.png" alt="menu" title="Menu"></div><div id="logo"><a href="./index.html"><img src="./resources/img/logo.gif" alt="logo"></a></div><div id="utilities"><input type="search" placeholder="Buscar">|<img src="./resources/img/user.png" alt="usuario" title="Usuario">|<img src="./resources/img/shopping-bag.png" alt="carrito" title="Carrito"></div>'
+        this.innerHTML = '<div id="menu"><img src="./resources/img/menu.png" alt="menu" title="Menu"></div><div id="logo"><a href="./index.html"><img src="./resources/img/logo.gif" alt="logo"></a></div><div id="utilities"><input type="search" placeholder="Buscar">|<img src="./resources/img/user.png" alt="usuario" title="Usuario">|<a href="./carrito.html"><img src="./resources/img/shopping-bag.png" alt="carrito" title="Carrito"></a></div>'
     }
 }
 
