@@ -29,14 +29,9 @@ body{
     justify-content: space-between;
 }
 
-#payment-body-cont{
-    padding: 0 8%; 
-}
-
 .confirming-shopping-steps{
     display: flex;
     flex-direction: column;
-    width: 60%;
 }
 
 .shopping-confirm-number, .shopping-confirm-title{
@@ -159,11 +154,28 @@ input{
 
 }
 
-payment-summary-table{
-    width: 35%;
+
+
+
+@media (min-width: 820px){
+
+    #payment-body-cont{
+        padding: 0 8%; 
+    }
+    
+    .confirming-shopping-steps{
+        width: 60%;
+    }
+
 }
 
-/* TABLA CONFIRMACION */
-.confirm-purchase{
-    border: solid 1px;
+@media (max-width: 430px){
+    
+    #payment-body-cont{
+        padding: 0 2.5%; 
+    }
+
+    .confirming-shopping-steps{
+        width: 100%;
+    }
 }

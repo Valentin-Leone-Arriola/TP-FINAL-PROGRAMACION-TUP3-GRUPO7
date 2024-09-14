@@ -1,5 +1,4 @@
 .shopping-steps{
-    padding-left: 8%;
     font-family: sans-serif;
     font-weight: bold;
 }
@@ -18,3 +17,20 @@
     top: 2px;
 }
 
+/* COMPUTADORA */
+@media (min-width: 820px){
+    
+    .shopping-steps{
+        padding: 0 8%;
+    }
+
+}
+
+/* MOBILE */
+@media (max-width: 430px){
+    
+    .shopping-steps{
+        padding: 0 3%;
+    }
+
+}

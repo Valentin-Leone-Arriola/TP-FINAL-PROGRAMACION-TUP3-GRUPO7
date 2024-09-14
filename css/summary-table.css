@@ -2,21 +2,17 @@
 /* RESUMEN DE COMPRA */
 .summary-table{
     border: solid 1px;
-    position: sticky;
     top: 11vh;
-    height: fit-content;
-    padding: 1.5ex;
 }
 
 .summary-back-to-cart{
     float: right;
-    font-size: 1.25ex;
     color: rgb(164, 134, 82);
     text-decoration: underline;
 }
 
 .summary-title{
-    font-size: 1.25em;
+    font-size: 1.2em;
     font-weight: bold;
     font-family: sans-serif;
 }
@@ -53,8 +49,13 @@
     color: rgb(164, 134, 82);
     border-color: rgb(164, 134, 82);
     background-color: white;
+    border: solid 3px;
+    cursor: pointer;
 }
 
+.coupon-code button:hover{
+    background-color: rgb(240, 240, 240);
+}
 
 .summary-product-prices{
     display: grid;
@@ -114,4 +115,53 @@
 
 .continue-shopping a:hover{
     text-decoration: underline;
+}
+
+@media (min-width: 820px){
+    
+    .summary-table{
+        position: sticky;
+        height: fit-content;
+        padding: 1.5ex;
+    }
+        
+    .summary-back-to-cart{
+        font-size: 1.25ex;
+    }
+
+    cart-summary-table{
+        width: 28%;
+        margin-right: 8%;
+    }
+
+    payment-summary-table{
+        width: 35%;
+    }
+}
+
+@media (max-width: 430px){
+
+    cart-summary-table{
+        width: 95%;
+
+    }
+
+    payment-summary-table{
+        width: 100%;
+    }
+
+    .summary-table{
+        position: relative;
+        left: 2.5%;
+        padding: 2.5ex 2ex;
+    }
+        
+    .summary-back-to-cart{
+        font-size: 1.75ex;
+    }
+
+    .continue-shopping{
+        font-size: 85%;
+        padding-top: 1.75ex;
+    }
 }
