@@ -60,20 +60,6 @@ form h1{
     background: transparent;
 }
 
-.recordar-olvido{
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 8px;
-    color: white;
-}
-.recordar-olvido a{
-   
-    color: white;
-}
-
-.recordar-olvido input:hover{
-    accent-color: white;
-}
 
 .btn{
 width: 100%;
