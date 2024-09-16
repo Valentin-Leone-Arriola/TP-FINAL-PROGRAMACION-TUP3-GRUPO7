@@ -3,7 +3,9 @@
 
 }
 
-
+.global-container{
+    margin-bottom:20px;
+}
 
 #prod-details{
     display: flex;
