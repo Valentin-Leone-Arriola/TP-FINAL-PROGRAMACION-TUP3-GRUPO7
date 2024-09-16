@@ -1,0 +1,199 @@
+*{
+    font-family: Poppins, roboto, noto, segoe ui, arial, sans-serif;
+
+}
+
+
+#prod-details{
+    display: flex;
+
+}
+
+#prod-details img{
+width: 100%;
+}
+
+#prod-details .main-img-container{
+    width: 40%;
+    margin-left: 50px;
+    }
+
+.secondary-img-container{
+    display: flex;
+    justify-content: space-between ;
+}
+.secondary-img{
+    flex-basis: 24%;
+    cursor: pointer;
+    &:hover{
+        box-shadow: 0px 0px 5px  rgba(0, 0, 0, 0.06);
+    
+    }
+}
+
+
+
+#prod-details .descripcion{
+width: 40%;
+padding: 30px;
+
+}
+.descripcion {
+    margin-right: 160px;
+    width: 40%;
+}
+
+.descripcion h1 {
+
+    font-size: 25px;
+    font-weight: 500;
+}
+
+
+.product-price {
+    font-size: 25px;
+    font-weight: bold;
+    font-weight: 500;
+
+}
+
+.cuotas {
+    color: rgb(4, 199, 4);
+}
+
+.talles{
+    padding-top: 30px;
+}
+.talles a{
+    color: black;
+}
+.talles img{
+    height: 30px;
+    width: 30px;
+}
+
+.talles button {
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    background-color: white;
+    border: solid rgb(215, 211, 211);
+    border-width: 1px;
+
+    &:hover{
+        border-color: grey;
+
+    }
+}
+
+.agregar-carrito button {
+    width: 100%;
+    height: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    color: white;
+    background-color: black;
+}
+
+.desc button {
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    border: none;
+    border-bottom: solid lightgray;
+    border-width: 1px;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: left;
+}
+
+.arrow{
+     width: 10px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+
+#nav{
+    display: flex;
+    justify-content: center;
+    padding: 20px 0px;
+    margin-top: 20px; 
+}
+#nav .prod-container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 80%;
+
+}
+
+#nav .prod{
+    width: 23%;
+min-width: 100px;
+text-align: center;
+font-weight: 400;
+cursor: pointer;
+
+&:hover{
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.06);
+
+}
+
+}
+#nav .prod img{
+    width: 100%;
+}
+#nav .prod p{
+    margin: 0px 0px;
+}
+
+#nav .price{
+    color: rgb(29, 168, 87);
+}
+
+
+.completa-look{
+
+    text-align: center;
+}
+
+
+
+
+
+
+@media screen and (max-width:480px){
+
+    #prod-details {
+       flex-wrap: wrap;
+        }
+    #prod-details .main-img-container{
+            width: 100%;
+            margin: 0px 10px;
+        }
+        #prod-details .descripcion {
+        margin: 0px 10px;
+        width: 100%;
+    }
+
+    #nav .prod{
+        font-size: 13.7px;
+    }
+    
+}
+
+
+@media screen and (width:820px){
+    #prod-details .main-img-container{
+        width: 50%;
+       
+    }
+    #prod-details .descripcion {
+    margin: 0px 10px;
+    width: 50%;
+}
+
+}
