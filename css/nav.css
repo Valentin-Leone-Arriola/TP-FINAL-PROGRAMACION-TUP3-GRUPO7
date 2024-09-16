@@ -4,10 +4,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-*
-special-header{
-    top: 0;
-}
+
 
 /*----------SUGERENCIAS------------*/
 
@@ -151,6 +148,7 @@ cursor: pointer;
 /* border: solid; */
     display: flex;
     justify-content: center;
+    margin-bottom: 30px;
  }
  .pre-footer{
     display: flex;
