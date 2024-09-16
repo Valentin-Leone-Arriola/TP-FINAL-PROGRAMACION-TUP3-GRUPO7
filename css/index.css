@@ -158,10 +158,6 @@ body{
     opacity: 1;
 }
 
-div:has(special-footer){
-    padding-bottom: 45px;
-}
-
 /*COMPUTER*/
 
 @media (min-width: 720px){

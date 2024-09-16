@@ -185,6 +185,19 @@ cursor: pointer;
     min-width: 400px;
 }
 
+.extra-info{
+    flex-grow: 1;
+    flex-wrap: wrap;
+    
+    position: relative;
+    width: 100%;
+    margin: 3% 0;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    
+    justify-items: center;
+}
 
 
 @media (max-width:480px) {
