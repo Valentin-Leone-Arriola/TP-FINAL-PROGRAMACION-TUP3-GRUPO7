@@ -1,0 +1,36 @@
+.shopping-steps{
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.shopping-steps img{
+    filter: brightness(0) saturate(100%) invert(66%) sepia(4%) saturate(5196%) hue-rotate(359deg) brightness(83%) contrast(64%);
+}
+
+.step-carrito, .step-identificacion, .step-entrega, .step-pago, .step-confirmacion{
+    opacity: 0.5;
+}
+
+.shopping-steps img{
+    width: 16px;
+    position: relative;
+    top: 2px;
+}
+
+/* COMPUTADORA */
+@media (min-width: 820px){
+    
+    .shopping-steps{
+        padding: 0 8%;
+    }
+
+}
+
+/* MOBILE */
+@media (max-width: 430px){
+    
+    .shopping-steps{
+        padding: 0 3%;
+    }
+
+}

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/product-view.css">
+    <link rel="stylesheet" href="./css/header-footer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <title>Porduct View</title>
+</head>
+
+<body>
+    <special-header></special-header>
+
+
+    <div class="global-container">
+    <section id="prod-details">
+
+        <div class="main-img-container">
+            <img src="./resources/img/ropa/CAMP1.jpg" alt="" id="main-img">
+            <div class="secondary-img-container">
+                <div class="secondary-img">
+                    <img src="./resources/img/ropa/CAMP1.JPG" class="small-img">
+                </div>
+                <div class="secondary-img">
+                    <img src="./resources/img/ropa/CAMP2.JPG" class="small-img">
+                </div>
+                <div class="secondary-img">
+                    <img src="./resources/img/ropa/CAMP3.JPG" class="small-img">
+                </div>
+                <div class="secondary-img">
+                    <img src="./resources/img/ropa/CAMP5.JPG" class="small-img">
+                </div>
+
+            </div>
+        </div>
+
+        <div class="descripcion">
+            <h1>Campera Nirou</h1>
+            <div class="product-price">
+                <span>$</span>
+                <span> </span>
+                <span>52</span>
+                <span>.</span>
+                <span>500</span>
+            </div>
+            <div class="cuotas">
+                <p>3 cuotas sin interés de $ 17.500</p>
+                <p>6 cuotas fijas de $ 9.800</p>
+            </div>
+            <div class="talles">
+                <p>ELEGÍ TU TALLE</p>
+                <button>S</button>
+                <button>M</button>
+                <button>L</button>
+                <button>XL</button>
+                <br>
+                <br>
+                 <a href="">Tabla de talles</a>
+
+            </div>
+            <br>
+            <div class="agregar-carrito">
+                <button>AGREGAR AL CARRITO</button>
+            </div>
+            <br>
+            <div class="desc">
+                <button>Descripción y Cuidados </button>
+                <br>
+                <button>Métodos de Envio </button>
+                <br>
+                <button>Métodos de Pago </button>
+                <br>
+                <button>Devoluciones</button>
+            </div>
+        </div>
+    </section>
+
+
+
+    <div class="completa-look">
+        <h2>COMPLETÁ TU LOOK</h2>
+    </div>
+    <section id="nav">
+        <div class="prod-container">
+            <div class="prod">
+                <img src="./resources/img/ropa/remera-grei.jpg" alt="">
+                <div class="desc">
+                    <p>Remera Lago</p>
+                    <p>$70.000</p>
+                    <p class="price">6 cuotas sin interés desde $19.000</p>
+                </div>
+            </div>
+            <div class="prod">
+                <img src="./resources/img/ropa/buzo-lago.jpg" alt="">
+                <div class="desc">
+                    <p>Buzo black</p>
+                    <p>$85.000</p>
+                    <p class="price">6 cuotas sin interés desde $19.000</p>
+                </div>
+            </div>
+            <div class="prod">
+                <img src="./resources/img/ropa/bermuda-over.jpg" alt="">
+                <div class="desc">
+                    <p>Bermuda Over</p>
+                    <p>$65.000</p>
+                    <p class="price">6 cuotas sin interés desde $19.000</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+    <special-footer></special-footer>
+    <script>
+        var mainImg = document.getElementById("main-img");
+        var smallImg = document.getElementsByClassName("small-img");
+        smallImg[0].onclick=function(){
+            mainImg.src=smallImg[0].src;
+        }
+        smallImg[1].onclick=function(){
+            mainImg.src=smallImg[1].src;
+        }
+        smallImg[2].onclick=function(){
+            mainImg.src=smallImg[2].src;
+        }
+        smallImg[3].onclick=function(){
+            mainImg.src=smallImg[3].src;
+        }
+
+    </script>
+
+    <script src="./js/header-footer.js"></script>
+
+</body>
+
+</html>

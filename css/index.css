@@ -1,0 +1,224 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    background-color: #ffffff;
+    overflow-x: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.pagewrap{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+}
+
+.main-img{
+    width: 100vw;
+    height: 95vh;
+}
+
+@keyframes ticker-animation{
+    0% {transform: translatex(0);}/*dice que el comienzo de la animacion 0% mueve el eje x en 0)*/
+    100% {transform: translateX(-200%);}/*al terminar la animacion termina en -200%, es decir en el item 3. Si fuesen 4 items deberia ser -300% y asi)*/
+}
+
+.ticker{
+    display: flex;
+    animation: linear ticker-animation 20s infinite;/*linear establece el timing, siempre misma velocidad, infinite no para*/
+}
+
+.ticker:hover{
+    animation-play-state: paused; /*para la animacion al poner el cursor encima*/
+}
+
+.ticker-item{
+    text-align: center;
+    width: 100%;
+    flex-shrink: 0;/*Dice cuanto se va a achicar un item en relacion a otros items flex al distribuirse el espacio. Al ser 0 el div va a ocupar todo el espacio disponible. Al ocupar un div 100% va a dejar sin lugar a los otros divs con otros textos que tendran un overflow fuera del container padre ticker*/
+}
+.ticker-wrap{
+    align-items: center;
+    background-color: grey;
+    width: 100%;
+    color: #000;
+    font-size: 1em;
+    font-family: inherit;
+    box-sizing: border-box;
+    overflow: hidden;
+    /*es el fondo del ticker que va a hacer que no se mueva todo*/
+    z-index: 500;
+    height: 5vh;
+    padding: 0;
+    position: fixed;
+}
+
+.ticker-link{
+    text-decoration: none;
+    color: #000;
+} 
+
+
+
+.product-padre{
+    flex-grow: 1;
+    /* flex-wrap: wrap; */
+    
+    position: relative;
+    width: 100%;
+    top: 11vh;
+    z-index: 0;
+    
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+}
+    
+.new-arrivals-title{
+    font-weight: 600;
+}
+
+.card{
+    border: none;
+    overflow: hidden;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.card img{
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.card-img-top:hover{
+    opacity: 0; 
+}
+
+.card#buzo1:hover{
+    background-image: url(../resources/img/ropa/buzo1back.webp);
+
+}
+
+.card#buzo2:hover{
+    background-image: url(../resources/img/ropa/buzo2back.webp);
+
+}
+
+.card#remera1:hover{
+    background-image: url(../resources/img/ropa/remera1back.webp);
+
+}
+
+.card#remera2:hover{
+    background-image: url(../resources/img/ropa/remera2back.webp);
+
+}
+
+.card#pantalon1:hover{
+    background-image: url(../resources/img/ropa/pantalon1back.webp);
+
+}
+
+.card#pantalon2:hover{
+    background-image: url(../resources/img/ropa/pantalon2back.webp);
+
+}
+
+.extra-info{
+    flex-grow: 1;
+    flex-wrap: wrap;
+    
+    position: relative;
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    
+    justify-items: center;
+}
+
+.owl-prev{
+    left: 0;
+    height: 40px;
+}
+
+.owl-next{
+    right: 0;
+}
+
+.owl-dots{
+    display: none;
+}
+
+.owl-nav .owl-prev:hover, .owl-nav .owl-next:hover{
+    background: none !important;
+    outline: none !important;
+    opacity: 1;
+}
+
+/*COMPUTER*/
+
+@media (min-width: 720px){
+
+    .cont-carousel{
+        padding: 5% 5%;
+    }
+
+    .card{
+        height: 300px;
+        width: auto;
+        margin: 0;
+        justify-content: center;
+        background-size: auto 300px;
+    }
+
+    .card-img-top{
+        width: 100%;
+        height: auto;
+    }
+
+    .owl-nav .owl-prev, .owl-nav .owl-next{
+        outline: none;
+        opacity: 0.6;
+        transition: all .5s ease;
+    }
+
+    .owl-nav{
+        position: relative;
+        top: -32vh;
+        justify-content: center;
+    }
+
+    .owl-prev{
+        position: absolute;
+    }
+
+    .owl-next{
+        position: absolute;
+    }
+
+    button img {
+        height: 35px;
+    }    
+
+    .extra-info{
+        top: 10vh;
+        padding-left: 15%;
+        padding-right: 12.5%;
+
+        grid-column-gap: 5%;
+        grid-row-gap: 10px;
+        
+    
+    }
+
+    .extra-info-item{
+        position: relative;
+        padding: 3em 0ex;
+        width: fit-content;
+
+    }
+}
+
