@@ -1,0 +1,1 @@
+Dentro del archivo __init__.py tenemos toda la inciializacion del proyecto, incluyendo las rutas que estamos importando para poder registrarlas como blue_print

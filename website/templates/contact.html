@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>Contact</title>
+    <link rel="stylesheet" href="{{url_for('static', filename = 'contacs.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename = 'header-footer.css')}}">
+{% endblock %}
+
+{% block content %}
+    <div class="main-wrapper">
+    <div class="contenedor">
+        <form action="">
+            <label for="" class="title">Nombre:</label>
+            <br>
+            <input type="text" name="" id="" placeholder="Ingrese nombre..">
+            <br>           
+                      
+            <label for="" class="title">E-mail:</label>
+            <br>
+
+            <input type="text" name="" id="" placeholder="Ingrese e-mail..">
+            <br>    
+               
+            <label for="" class="title">Subjects:</label>
+            <br>
+
+            <input type="text" name="" id="" placeholder="Ingrese subject..">
+            <br>
+            
+            <label for="" class="title">Mensaje:</label>
+            <br>
+
+            <textarea name="" id=""></textarea>
+            <button type="submit" id="enviar" value="Enviar">Enviar</button>
+            <br>
+        </form>
+        <button class="return"onclick="window.location.href='index.html'">Volver</button>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block scr %}
+    <script src="/website/static/js/header-footer.js"></script>
+{% endblock %}
