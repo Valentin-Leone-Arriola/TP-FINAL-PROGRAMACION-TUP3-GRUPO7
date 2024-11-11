@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/website/static/css/identificacion.css">
+    <link rel="stylesheet" href="/website/static/css/header-footer.css">
+    <link rel="stylesheet" href="/website/static/css/shopping-steps.css">
+    <link rel="stylesheet" href="/website/static/css/summary-table.css">
+
+    <style>
+        .step-confirmacion{
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrap">
+        <special-header></special-header>
+
+    <div class="product-padre">
+        
+        <shopping-steps></shopping-steps>
+        <br>
+        <div id="payment-body-cont" class="body-cont">
+            <div class="confirming-shopping-steps">
+
+                <div class="cart-steps-table">
+                    
+                    <p><span class="shopping-confirm-title">Confirmación</span></p>
+                    <br>
+                    Por favor, confirme sus datos antes de finalizar la compra.
+                    <br>
+                    <br><br>
+                    <div class="dobleInput">
+                        <div class="input-cont">
+                            <label>Nombre/s</label>
+                            <br>
+                            <span class="data-confirmation"></span>
+                            Apellido/s, Nombre/s
+                        </div>
+
+                        <div class="input-cont">
+                            <label>Correo:</label>
+                            <br>
+                            <span class="data-confirmation">
+                                correo@example.com.ar
+                            </span>
+                        </div>  
+
+                        <div class="input-cont">
+                            <label>DNI (sin puntos ni guiones)</label>
+                            <br>
+                            <span class="data-confirmation">
+                                12.345.678
+                            </span>
+                        </div>
+                        <div class="input-cont">
+                            <label>Telefono / Celular</label>
+                            <br>
+                            <span class="data-confirmation">
+                                +54 9 341 XXX-XXXX
+                            </span>
+                        </div>  
+
+                        <div class="input-cont">
+                            <label>Dirección</label>
+                            <br>
+                            <span class="data-confirmation">
+                                Av. del Libertador 1473, Buenos Aires
+                            </span>
+                        </div>
+                        <div class="input-cont">
+                            <label>Método de pago</label>
+                            <br>
+                            <span class="data-confirmation">
+                                Tarjeta de ${crédito}(futuro js)
+                            </span>
+                        </div>  
+                    </div> 
+                    <br><br>
+                    <div class="cart-confirm-button">
+                        <a href="#">
+                            <button type="submit">FINALIZAR COMPRA</button>
+                        </a>
+                    </div>
+                    
+                </div>
+
+            </div>
+
+                <payment-summary-table></payment-summary-table>
+            
+        </div>
+    </div>
+    
+    <special-footer></special-footer>
+</div>
+
+
+<script src="/website/static/js/header-footer.js"></script>
+<script src="/website/static/js/shopping-steps.js"></script>
+<script src="/website/static/js/summary-table.js"></script>
+</body>
+</html>

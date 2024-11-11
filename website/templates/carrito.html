@@ -1,0 +1,122 @@
+{% extends "base.html"%}
+{% block head%}
+
+    <title>Carrito</title>
+
+    <link rel="stylesheet" href="{{url_for('static', filename = 'carrito.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename = 'header-footer.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename = 'shopping-steps.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename = 'summary-table.css')}}" />
+
+    <style>
+      .step-carrito{
+        opacity: 1 !important;
+      }
+      .eliminar_item{
+        font-weight: 600;
+        transition: all 0.3s;
+            &:hover{
+                transform: translateY(-2px);
+                box-shadow: 0px 0px 15px rgba(235, 235, 235, 0.5);
+            }
+      }
+    </style>
+{% endblock %}
+
+
+{% block content %}
+    <div class="contenedor">
+        <special-header></special-header>
+
+        <div class="page-wrap">
+            <div class="product-padre">
+                <shopping-steps></shopping-steps>
+                <br />
+
+                <div class="main-content" style="display: flex; justify-content: space-between; width: 90%;">
+
+                    <div class="body-cont" style="flex: 1; padding-right: 10px; width: 80%;">
+                        <div class="product-table" style="align-items: center;">
+                            <!-- Fila Header -->
+                            <div id="product-title" class="table-title">Producto</div>
+                            <div id="quant-title" class="table-title">Cantidad</div>
+                            <div id="price-title" class="table-title">Precio</div>
+
+                            {% for item in carrito %}
+                                <!-- Producto 1 -->
+                                <div class="product-img">
+                                    <a href="#">
+                                        <img src="{{ item.img_url }}" alt="{{ item.nombre }}" />
+                                    </a>
+                                </div>
+
+                                <div class="product-item">
+                                    {{ item.nombre }}                                  
+                                </div>
+
+                                <div class="product-quant">
+                                    <a class="cart_item_add" href="/{{item.id}}/agregar_carrito">
+                                        <img src="{{url_for('static', filename= '/img/add.png')}}" alt="Añadir" />
+                                    </a>
+                                    <span class="cart_item_quant">{{ item.cantidad }}</span>
+                                    <a class="cart_item_sub" href="{{ url_for('views.eliminar_producto_carrito', producto_id=item.id) }}">
+                                        <img src="{{url_for('static', filename= '/img/minus.png')}}" alt="Restar" />
+                                    </a>
+                                </div>
+
+                                <div class="product-price">{{ item.precio }}</div>
+
+                                <a class="eliminar_item" href="{{ url_for('views.eliminar_producto_carrito', producto_id=item.id) }}">
+                                    <button  type="button" style="font-size: 15px; width: 133px; align-items: center; border: none;">
+                                        Eliminar producto
+                                    </button>
+                                </a>
+                            {% endfor %}
+                            
+                        </div>
+                     
+                        
+                    </div>
+                    
+                   
+                    <div  style="width: 20%; border: 1px solid black; display: flex; justify-content: center; text-align: center; padding-left: 10px; height: 200px;">
+                        <div>
+                            <h5>Total:</h5>
+                            <p>${{ total_final }}</p>
+
+                            {% if carrito != [] %}
+                                <a href="{{ url_for('views.eliminar_carrito') }}">
+                                    <button type="button">
+                                        Borrar carrito
+                                    </button>
+                                </a>
+
+                                <a href="{{ url_for('views.carrito') }}">
+                                    <button type="button">
+                                        Confirmar carrito
+                                    </button>
+                                </a>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                </div> <!-- Fin main-content -->
+            </div> <!-- Fin product-padre -->
+        </div> <!-- Fin page-wrap -->
+    </div> <!-- Fin contenedor -->
+
+    <special-footer></special-footer>
+{% endblock %}
+
+
+    {% block scr %}
+    <!-- <script src="/shopping-steps.js"></script> -->
+
+   <!--  <script src="/summary-table.js"></script> -->
+    
+    {% endblock  %}
+
+
+
+
+
