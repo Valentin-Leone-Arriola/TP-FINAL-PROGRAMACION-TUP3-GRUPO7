@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <link rel="stylesheet" href="/website/static/css/identificacion.css">
-    <link rel="stylesheet" href="/website/static/css/header-footer.css">
-    <link rel="stylesheet" href="/website/static/css/shopping-steps.css">
-    <link rel="stylesheet" href="/website/static/css/summary-table.css">
+    <link rel="stylesheet" href="{{url_for('static', filename = 'identificacion.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename = 'shopping-steps.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename = 'sumary-table.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename = 'header-footer.css')}}" />
 
     <style>
         .step-entrega{
@@ -56,7 +56,7 @@
                     </div>
                     <br>
                     <div class="cart-confirm-button">
-                        <a href="./payment.html">
+                        <a href="{{url_for('views.confirm_purchase')}}">
                             <button type="submit">CONTINUAR</button>
                         </a>
                     </div>

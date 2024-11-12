@@ -9,7 +9,7 @@ views = Blueprint('views', __name__)
 @views.route('/')
 def home():
     from . import Producto 
-    lista_productos = Producto.query.limit(6).all()
+    lista_productos = Producto.query.order_by(Producto.id.desc()).limit(6).all()
     return render_template('index.html', productos =  lista_productos ) 
 
 @views.route('/nav')
