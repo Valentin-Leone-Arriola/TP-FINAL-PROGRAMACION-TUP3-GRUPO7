@@ -174,7 +174,7 @@ def eliminar():
             return redirect(url_for('views.eliminar'))  
          
 
-        # Fetch the product by its id
+       
         producto = Producto.query.filter_by(id=id).first()
         
         if not producto:
@@ -187,7 +187,7 @@ def eliminar():
             flash(f"Cantidad actualizada correctamente. Nuevo stock: {producto.cantidad}.", category='exitoso')
         elif producto.cantidad == cantidad:
             # Si tiejen la misma cantidad lo elimina
-            producto.eliminarProducto()  # Make sure this method is defined correctly
+            producto.eliminarProducto()  
             flash("Producto eliminado correctamente.", category='exitoso')
             return redirect(url_for('views.eliminar'))
         else:
