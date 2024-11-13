@@ -1,0 +1,152 @@
+
+{% extends 'base.html' %}
+
+
+
+{% block head %}
+    <title>Document</title>
+
+    <link rel="stylesheet" href="{{url_for('static', filename = 'identificacion.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename = 'header-footer.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename = 'shopping-steps.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename = 'summary-table.css')}}" />
+    <style>
+        .step-confirmacion{
+            opacity: 1;
+        }
+    </style>
+{% endblock %}
+
+
+
+    {% block content %}
+    <div class="page-wrap">
+        <special-header></special-header>
+
+    <div class="product-padre">
+        
+        <shopping-steps></shopping-steps>
+        <br>
+        <div id="payment-body-cont" class="body-cont">
+            <div class="confirming-shopping-steps">
+
+                <div class="cart-steps-table">
+                    
+                    <p><span class="shopping-confirm-title">Confirmación</span></p>
+                    <br>
+                    Por favor, confirme sus datos antes de finalizar la compra.
+                    <br>
+                    <br><br>
+                    <div class="dobleInput">
+                        <div class="input-cont">
+                            <label>Nombre/s</label>
+                            <br>
+                            <span class="data-confirmation"></span>
+                            Apellido/s, Nombre/s
+                        </div>
+
+                        <div class="input-cont">
+                            <label>Correo:</label>
+                            <br>
+                            <span class="data-confirmation">
+                                correo@example.com.ar
+                            </span>
+                        </div>  
+
+                        <div class="input-cont">
+                            <label>DNI (sin puntos ni guiones)</label>
+                            <br>
+                            <span class="data-confirmation">
+                                12.345.678
+                            </span>
+                        </div>
+                        <div class="input-cont">
+                            <label>Telefono / Celular</label>
+                            <br>
+                            <span class="data-confirmation">
+                                +54 9 341 XXX-XXXX
+                            </span>
+                        </div>  
+
+                        <div class="input-cont">
+                            <label>Dirección</label>
+                            <br>
+                            <span class="data-confirmation">
+                                Av. del Libertador 1473, Buenos Aires
+                            </span>
+                        </div>
+                        <div class="input-cont">
+                            <label>Método de pago</label>
+                            <br>
+                            <span class="data-confirmation">
+                                Tarjeta de ${crédito}(futuro js)
+                            </span>
+                        </div>  
+                    </div> 
+                    <br><br>
+                    <div class="cart-confirm-button">
+                        <form method="POST">
+                            <button type="submit">FINALIZAR COMPRA</button>
+                        </form>
+                    </div>
+                    
+                </div>
+
+            </div>
+            
+          <div id="cart-summary-table" class="summary-table">
+            <span class="summary-title">Resumen de la compra
+
+            </span>
+            <br>
+            <hr>
+            <div class="recipe-coupon">
+              <label>USAR CUPÓN DE DESCUENTO</label>
+              <br>
+              <div class="coupon-code">
+                <input type="text" placeholder="Código">
+                <button class="add-coupon">Añadir</button>
+              </div>
+            </div>
+            <br>
+            <hr class="recipe-hr">
+            <div class="summary-product-prices">
+              <div class="recipe-title">Subtotal</div>
+              <div class="recipe-price">
+                <span>$ precio</span>
+              </div>
+              <div class="recipe-title">Descuentos</div>
+              <div class="recipe-price">
+                <span>$ subtotal</span>
+              </div>
+              <div class="recipe-title">Gastos del envío</div>
+              <div class="recipe-price">
+                <span>$ envio</span>
+              </div>
+              <hr class="recipe-hr">
+              <div class="recipe-title">
+                <span class="total-price">Total</span>
+              </div>
+              <div class="recipe-price">
+                <span class="total-price">$ {{total_final}}</span>
+              </div>
+            </div>
+            <hr class="recipe-hr">
+           
+          </div>
+         
+        </div>
+      </div>
+
+            
+        </div>
+    </div>
+    
+   
+</div>
+
+{% block src %}
+<script src="/shopping-steps.js"></script>
+
+{% endblock %}
+{% endblock %}

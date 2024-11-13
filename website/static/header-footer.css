@@ -1,0 +1,197 @@
+*{
+    box-sizing: border-box;
+}
+
+
+/* ---------------- CSS de las alertas flash ----------------  */
+
+
+#error{
+    background-color: rgb(235, 75, 75);
+    color :white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .2); 
+}
+#exito{
+    background-color: rgb(41, 231, 136);
+    color: rgb(54, 54, 54);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .2); 
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 300;
+    align-items: center;
+    background-color: #ffffff;
+
+    width: 100%;
+    height: 10vh;
+    padding: 10px 0;
+}
+
+.header img{
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+#menu img { 
+    height: 100%;
+    max-height: 20px;
+}
+
+#logo img{
+    height: 100%;
+    max-height: 45px;
+}
+
+#utilities{
+    margin: 0 1.5rem;
+
+}
+
+#utilities img {
+    margin: 0 1.5rem;
+    height: 80%;
+    width: auto;
+    max-height: 25px;
+    border-left: 2px #222222 solid;
+    padding-left: 0.5rem;
+    margin-top: 0.25rem;
+}
+
+#utilities img:nth-child(2){
+    padding-right: 0.25rem;
+    margin: 0;
+}
+
+#utilities img:nth-child(1){
+    padding-right: 0.25rem;
+    margin-bottom:  0.25rem;
+}
+
+#utilities input {
+    background-color: transparent;
+    border: solid 0.33ex #888;
+    border-radius: 1ex;
+    padding-left: 1ex;
+    height: 30px;
+    font-size: small;
+    max-width: 100px;
+}
+
+
+.original-reference a{
+    text-decoration: underline;
+    text-decoration-color: white;
+}
+
+.original-reference{
+    /* position: relative; */
+    display: flex;
+    
+    background-color: #222222;
+    color: white;
+ 
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    width: 100%;
+    height: 10vh;
+    padding: 10px 0;
+    
+}
+
+/* COMPUTER */
+@media (min-width: 760px){
+
+    
+    #menu {
+        height: 4vh;
+        width: 33%;
+        align-items: center;
+        padding-left: 10px;
+    }
+    
+    #logo {
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        height: 8vh;
+        width: 33%;
+    }
+        
+    #utilities {
+        display: flex;
+        /* height: 4.75vh; */
+        width: 33%;
+        align-items: center;
+        justify-content: right;
+
+    }
+
+    #utilities input {
+        margin-right: 20px;
+        padding: 1ex;
+    }
+    
+    .original-reference{
+        font-size: smaller;
+    }    
+
+    .original-reference{
+        height: 8vh;
+        padding: 10px 10px;
+        margin-top: 5%;
+
+    }
+
+}
+
+/* TABLET? */
+@media (min-width: 430px) and (max-width: 759px){
+    #utilities input{
+        display: none
+    }
+    #menu{
+        padding-left: 10px;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 430px){
+
+    header{
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+    }
+
+    #logo{
+        justify-self: center;
+        align-self: center;
+        padding-left: 50px;
+    }
+
+    #utilities input{
+        display: none;
+    }
+
+    #menu{
+        padding-left: 10px;
+    }
+
+    .original-reference{
+        /* top: 30vh; */
+        font-size: 85%;
+        padding: 10px 10px;
+    }
+
+}

@@ -1,0 +1,41 @@
+
+
+
+<header>
+
+    <div id="menu">
+        {% if current_user.is_authenticated %}
+        <p> Hola, {{current_user.nombre}} </p>
+        {% endif %}
+       <!--  <a href="./developing-menu.html">
+            <img src="./resources/img/menu.png" alt="menu" title="Menu">
+        </a>-->
+    </div> 
+
+    <div id="logo">
+            <a href="/">
+                <img src="{{url_for('static', filename = '/img/logo.gif')}}"  alt="logo">
+            </a>
+    </div>
+        
+    <div id="utilities">
+     
+        {% if current_user.is_authenticated %}
+        <a href="/carrito">
+            <img src="{{url_for('static', filename = '/img/shopping-bag.png')}}"  alt="Carrito">
+          
+        </a>
+            
+            <a href="{{ url_for('auth.logoutRoute') }}">
+                Cerrar sesion
+            </a>
+
+        {% else %}
+            <a href="/login">
+                Iniciar sesion
+            </a>
+        {% endif %}
+
+    </div>
+
+</header>

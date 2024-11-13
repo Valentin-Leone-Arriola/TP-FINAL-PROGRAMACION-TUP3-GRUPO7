@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+
+
+
+{% block head %}
+
+
+    <title>Document</title>
+
+    <link rel="stylesheet" href="{{url_for('static', filename = 'identificacion.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename = 'header-footer.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename = 'shopping-steps.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename = 'summary-table.css')}}" />
+
+
+    <style>
+        .step-pago{
+            opacity: 1;
+        }
+    </style>
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="page-wrap">
+        <special-header></special-header>
+
+    <div class="product-padre">
+        
+        <shopping-steps></shopping-steps>
+        <br>
+        <div id="payment-body-cont" class="body-cont">
+            <div class="confirming-shopping-steps">
+
+                <div class="cart-steps-table">
+                    <p><span class="shopping-confirm-number">1.</span> <span class="shopping-confirm-title">Identificación</span></p>
+                </div>
+
+                <br>
+
+                <div class="cart-steps-table">
+                    <p><span class="shopping-confirm-number">2.</span> <span class="shopping-confirm-title">Envío</span></p>
+                </div>
+
+                <br>
+
+                <div class="cart-steps-table">
+                    <p><span class="shopping-confirm-number">3.</span> <span class="shopping-confirm-title">Pago</span></p>
+                    <br>
+                    <div class="payment-input">
+                        <input type="radio" name="asdasd">Tarjeta de débito
+                    </div>
+                    <br>
+                    <div class="payment-input">
+                        <input type="radio" name="asdasd">Tarjeta de crédito
+                    </div>
+                    <br>
+                    <div class="cart-confirm-button">
+                        <a href="{{url_for('views.confirm_purchase')}}">
+                            <button type="submit">CONTINUAR</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+                
+          <div id="cart-summary-table" class="summary-table">
+            <span class="summary-title">Resumen de la compra
+
+            </span>
+            <br>
+            <hr>
+            <div class="recipe-coupon">
+              <label>USAR CUPÓN DE DESCUENTO</label>
+              <br>
+              <div class="coupon-code">
+                <input type="text" placeholder="Código">
+                <button class="add-coupon">Añadir</button>
+              </div>
+            </div>
+            <br>
+            <hr class="recipe-hr">
+            <div class="summary-product-prices">
+              <div class="recipe-title">Subtotal</div>
+              <div class="recipe-price">
+                <span>$ precio</span>
+              </div>
+              <div class="recipe-title">Descuentos</div>
+              <div class="recipe-price">
+                <span>$ subtotal</span>
+              </div>
+              <div class="recipe-title">Gastos del envío</div>
+              <div class="recipe-price">
+                <span>$ envio</span>
+              </div>
+              <hr class="recipe-hr">
+              <div class="recipe-title">
+                <span class="total-price">Total</span>
+              </div>
+              <div class="recipe-price">
+                <span class="total-price">$ {{total_final}}</span>
+              </div>
+            </div>
+            <hr class="recipe-hr">
+           
+          </div>
+         
+        </div>
+      </div>
+            
+        </div>
+    </div>
+    
+    <special-footer></special-footer>
+</div>
+
+{% block src %}
+<script src="/shopping-steps.js"></script>
+
+{% endblock %}
+{% endblock %}
+

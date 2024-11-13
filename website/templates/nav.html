@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+    {% block head %}
+
+    <link rel="stylesheet" href="{{url_for('static', filename = 'nav.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename = 'header-footer.css')}}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <title>navegación</title>
+    {% endblock %}
+
+
+ 
+
+{% block content %}
+ <!-- <div class="sugerencias">
+    <h4>Sugerencias:</h3>
+    <a href="">remera hombre</a>
+    -
+    <a href="">pantalones hombre</a>
+    -
+    <a href="">camisas hombre</a>
+    -
+    <a href="">buzos hombre</a>
+
+ </div>
+
+ <section id="filtrar-ordenar-container">
+ <div class="filtrar-ordenar">
+<button>FILTRAR POR <img src="./resources/img/filter.png" alt=""></button>
+<button>ORDENAR POR <img src="./resources/img/down-arrow.png" alt=""></button>
+</section> -->
+
+ </div>
+    
+    <section id="nav" class="section-1">
+        <div class="prod-container">
+        {% for producto in productos %}
+        <div class="prod">
+            <a href="{{ url_for('views.product-view', producto_id = producto.id) }}"><img src="{{producto.img_url}}"></a>
+            <div class="desc">
+                <p>{{producto.nombre}}</p>
+                <p>${{producto.precio}}</p>
+                <p class="price">${{producto.precio}}</p>
+            </div>
+        </div>
+        {% endfor %}
+
+
+        
+        </div>
+    </section>
+
+
+    <!-- 2do footer. Contacto, empresa y demás -->
+    <div class="extra-info">
+        <div class="extra-info-item">
+            <h5>Ayuda</h5>
+            <br>
+            <a href="./preguntas">
+              Preguntas Frecuentes
+            </a>
+        </div>
+
+        <div class="extra-info-item">
+            <h5>Empresa</h5>
+            <br>
+            <a href="./politica">
+              Politica de Privacidad
+            </a>
+        </div>
+
+        <div class="extra-info-item">
+            <h5>Contacto</h5>
+            <br>
+            <a href="./contacto">
+                Atención al Cliente
+            </a>
+            <br>
+            +54 9 11 xxxx-xxxx
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+    <link rel="stylesheet" href="{{url_for('static', filename = 'product-view.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename = 'header-footer.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <title>Porduct View</title>
+{% endblock %}
+
+
+{% block content %}
+
+
+    <div class="global-container">
+    <section id="prod-details">
+
+        <div class="main-img-container">
+           
+            <img src="{{item.img_url}}" alt="" id="main-img">
+            <div class="secondary-img-container">
+                <div class="secondary-img">
+                    <img src="./resources/img/ropa/CAMP1.JPG" class="small-img" alt="otros angulos de la prenda">
+                </div>
+                <div class="secondary-img">
+                    <img src="./resources/img/ropa/CAMP2.JPG" class="small-img"alt="otros angulos de la prenda">
+                </div>
+                <div class="secondary-img">
+                    <img src="./resources/img/ropa/CAMP3.JPG" class="small-img"alt="otros angulos de la prenda">
+                </div>
+                <div class="secondary-img">
+                    <img src="./resources/img/ropa/CAMP5.JPG" class="small-img"alt="otros angulos de la prenda">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="descripcion">
+            <h1>{{item.nombre}}</h1>
+            <div class="product-price">
+                <span>$</span>
+                <span> </span>
+                <span>{{item.precio}}</span>
+
+            </div>
+            <div class="cuotas">
+                <p>3 cuotas sin interés de $ {{(item.precio/3) | round(2)}}</p>
+                <p>6 cuotas de $ {{((item.precio*1.15)/6) | round(2)}}</p>
+            </div>
+            <div class="talles">
+                <p>ELEGÍ TU TALLE</p>
+                <button>S</button>
+                <button>M</button>
+                <button>L</button>
+                <button>XL</button>
+                <br>
+                <br>
+                 <a href="">Tabla de talles</a>
+
+            </div>
+            <br>
+            <div class="agregar-carrito">
+                <a href="/{{item.id}}/agregar_carrito">
+                <button>AGREGAR AL CARRITO</button>
+                </a>
+            </div>
+            <br>
+            <div class="desc">
+                <button>Descripción y Cuidados </button>
+                <br>
+                <button>Métodos de Envio </button>
+                <br>
+                <button>Métodos de Pago </button>
+                <br>
+                <button>Devoluciones</button>
+            </div>
+        </div>
+    </section>
+
+
+
+    <div class="completa-look">
+        <h2>COMPLETÁ TU LOOK</h2>
+    </div>
+    <section id="nav">
+        <div class="prod-container">
+            {% for producto in productos %}
+            <div class="prod">
+                <a href="{{ url_for('views.product-view', producto_id = producto.id) }}">
+                <img src="{{producto.img_url}}" alt="">
+            </a>
+                <div class="desc">
+                    <p>{{producto.nombre}}</p>
+                    <p>${{producto.precio}}</p>
+                    <p class="price">6 cuotas sin interés desde ${{(producto.precio/6) | round(2)}}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+</div>
+    <script>
+        var mainImg = document.getElementById("main-img");
+        var smallImg = document.getElementsByClassName("small-img");
+        smallImg[0].onclick=function(){
+            mainImg.src=smallImg[0].src;
+        }
+        smallImg[1].onclick=function(){
+            mainImg.src=smallImg[1].src;
+        }
+        smallImg[2].onclick=function(){
+            mainImg.src=smallImg[2].src;
+        }
+        smallImg[3].onclick=function(){
+            mainImg.src=smallImg[3].src;
+        }
+
+    </script>
+
+{% endblock %}
+
