@@ -156,7 +156,7 @@ def shipment():
         total_final += producto.precio * producto.cantidad
     return render_template('shipment.html', total_final = total_final)
 
-@views.route('/identificacion')
+@views.route('/identificacion', methods = ['GET', 'POST'])
 def identificacion():
     from . import Carrito, Producto
     usuario_id = current_user.id
@@ -166,6 +166,9 @@ def identificacion():
         producto = Producto.query.get(item.producto_id)
         producto.cantidad = item.cantidad
         total_final += producto.precio * producto.cantidad
+    if request.method == 'POST':
+        redirect(url_for('views.shipment'))
+    
     return render_template('identificacion.html', total_final = total_final)
 
 
