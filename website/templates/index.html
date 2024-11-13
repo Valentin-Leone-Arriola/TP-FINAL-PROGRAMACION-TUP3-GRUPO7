@@ -64,7 +64,7 @@
             <div class="extra-info-item">
                 <h5>Ayuda</h5>
                 <br>
-                <a href="./preguntas_frecuentes.html">
+                <a href="{{url_for('views.preguntas')}}">
                   Preguntas Frecuentes
                 </a>
             </div>
@@ -72,7 +72,7 @@
             <div class="extra-info-item">
                 <h5>Empresa</h5>
                 <br>
-                <a href="./politica_privacidad.html">
+                <a href="{{url_for('views.politica')}}">
                   Politica de Privacidad
                 </a>
             </div>
@@ -80,7 +80,7 @@
             <div class="extra-info-item">
                 <h5>Contacto</h5>
                 <br>
-                <a href="./contact.html">
+                <a href="{{url_for('views.contacto')}}">
                   Atención al Cliente
                 </a>
                 <br>
@@ -108,6 +108,5 @@
 
         </script>
         
-        <script src="{{url_for('static', filename='header-footer.js')}}"></script>
       {% endblock  %}
     

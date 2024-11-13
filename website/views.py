@@ -9,7 +9,7 @@ views = Blueprint('views', __name__)
 @views.route('/')
 def home():
     from . import Producto 
-    lista_productos = Producto.query.order_by(Producto.id.desc()).limit(6).all()
+    lista_productos = Producto.query.order_by(Producto.id.desc()).limit(6).all() 
     return render_template('index.html', productos =  lista_productos ) 
 
 @views.route('/nav')
@@ -85,24 +85,49 @@ def eliminar_producto_carrito(producto_id):
 
 
 
-@views.route('/carrito/eliminar', methods=["POST", "GET"])
-def eliminar_carrito():
-    from . import Carrito 
+@views.route('/carrito/eliminar_producto/<int:producto_id>', methods=["POST", "GET"])
+def eliminar_producto_entero(producto_id):
+    from . import Carrito
     usuario_id = current_user.id
-    carrito_items = Carrito.query.filter_by(usuario_id = usuario_id).all()
-
-    for item in carrito_items :
-        item.eliminarCarrito()
+    carrito_item = Carrito.query.filter_by(producto_id = producto_id, usuario_id = usuario_id).first()
+    carrito_item.eliminarCarrito()
 
     return redirect(url_for('views.carrito'))
 
 
 
 
-@views.route('/confirm-purchase')
-def confirm_purchase():
 
-    return render_template('confirm-purchase.html')
+
+
+@views.route('/confirm_purchase', methods = ['GET', 'POST'])
+def confirm_purchase():
+    from . import Carrito, Producto
+    usuario_id = current_user.id
+    carrito_items = Carrito.query.filter_by(usuario_id = usuario_id).all()
+    total_final = 0
+    for item in carrito_items:
+        producto = Producto.query.get(item.producto_id)
+        producto.cantidad = item.cantidad
+        total_final += producto.precio * producto.cantidad
+    if request.method == 'POST':
+        for item in carrito_items:
+            item.eliminarCarrito()
+        flash('Compra confirmada con exito', category='exitoso')
+        return redirect(url_for('views.home'))
+    return render_template('confirm-purchase.html', total_final = total_final)
+
+@views.route('/payment')
+def payment():
+    from . import Carrito, Producto
+    usuario_id = current_user.id
+    carrito_items = Carrito.query.filter_by(usuario_id = usuario_id).all()
+    total_final = 0
+    for item in carrito_items:
+        producto = Producto.query.get(item.producto_id)
+        producto.cantidad = item.cantidad
+        total_final += producto.precio * producto.cantidad
+    return render_template('payment.html', total_final = total_final)
 
 @views.route('/contacto')
 def contacto():
@@ -118,10 +143,30 @@ def preguntas():
 def politica():
 
     return render_template('politica-privacidad.html')
+
 @views.route('/shipment')
 def shipment():
+    from . import Carrito, Producto
+    usuario_id = current_user.id
+    carrito_items = Carrito.query.filter_by(usuario_id = usuario_id).all()
+    total_final = 0
+    for item in carrito_items:
+        producto = Producto.query.get(item.producto_id)
+        producto.cantidad = item.cantidad
+        total_final += producto.precio * producto.cantidad
+    return render_template('shipment.html', total_final = total_final)
 
-    return render_template('shipment.html')
+@views.route('/identificacion')
+def identificacion():
+    from . import Carrito, Producto
+    usuario_id = current_user.id
+    carrito_items = Carrito.query.filter_by(usuario_id = usuario_id).all()
+    total_final = 0
+    for item in carrito_items:
+        producto = Producto.query.get(item.producto_id)
+        producto.cantidad = item.cantidad
+        total_final += producto.precio * producto.cantidad
+    return render_template('identificacion.html', total_final = total_final)
 
 
 
@@ -174,7 +219,7 @@ def eliminar():
             return redirect(url_for('views.eliminar'))  
          
 
-       
+        
         producto = Producto.query.filter_by(id=id).first()
         
         if not producto:

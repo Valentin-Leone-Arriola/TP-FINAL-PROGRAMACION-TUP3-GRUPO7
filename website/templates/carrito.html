@@ -1,5 +1,8 @@
-{% extends "base.html"%}
-{% block head%}
+{% extends 'base.html' %}
+
+
+
+{% block head %}
 
     <title>Carrito</title>
 
@@ -8,114 +11,129 @@
     <link rel="stylesheet" href="{{url_for('static', filename = 'shopping-steps.css')}}" />
     <link rel="stylesheet" href="{{url_for('static', filename = 'summary-table.css')}}" />
 
+
     <style>
       .step-carrito{
         opacity: 1 !important;
       }
-      .eliminar_item{
-        font-weight: 600;
-        transition: all 0.3s;
-            &:hover{
-                transform: translateY(-2px);
-                box-shadow: 0px 0px 15px rgba(235, 235, 235, 0.5);
-            }
-      }
     </style>
 {% endblock %}
 
+ 
 
 {% block content %}
-    <div class="contenedor">
-        <special-header></special-header>
 
-        <div class="page-wrap">
-            <div class="product-padre">
-                <shopping-steps></shopping-steps>
-                <br />
+    <div class="page-wrap">
+      <special-header></special-header>
+      
+      <div class="product-padre">
 
-                <div class="main-content" style="display: flex; justify-content: space-between; width: 90%;">
+        <shopping-steps></shopping-steps>
+        <br />
+        <div class="body-cont">
+          <div class="product-table">
+            <!-- Fila Header -->
+            <div id="product-title" class="table-title">Producto</div>
 
-                    <div class="body-cont" style="flex: 1; padding-right: 10px; width: 80%;">
-                        <div class="product-table" style="align-items: center;">
-                            <!-- Fila Header -->
-                            <div id="product-title" class="table-title">Producto</div>
-                            <div id="quant-title" class="table-title">Cantidad</div>
-                            <div id="price-title" class="table-title">Precio</div>
+            <div id="quant-title" class="table-title">Cantidad</div>
 
-                            {% for item in carrito %}
-                                <!-- Producto 1 -->
-                                <div class="product-img">
-                                    <a href="#">
-                                        <img src="{{ item.img_url }}" alt="{{ item.nombre }}" />
-                                    </a>
-                                </div>
+            <div id="price-title" class="table-title">Precio</div>
 
-                                <div class="product-item">
-                                    {{ item.nombre }}                                  
-                                </div>
+            {% for item in carrito %}
+            
+            <!-- Producto 1 -->
+            <!-- Imagen producto -->
+            <div class="product-img">
+              <a href="#">
+                <img src="{{ item.img_url }}" />
+              </a>
+            </div>
+            <!-- Nombre producto -->
+            <div class="product-item">{{ item.nombre }} </div>
+            <!-- Cantidad deseada -->
+            <div class="product-quant">
+              <a class="cart_item_add" href="/{{item.id}}/agregar_carrito">
+                <img src="{{url_for('static', filename= '/img/add.png')}}" alt="" />
+              </a>
+              <span class="cart_item_quant">{{ item.cantidad }}</span>
+              <a class="cart_item_sub" href="{{ url_for('views.eliminar_producto_carrito', producto_id=item.id) }}">
+                <img src="{{url_for('static', filename= '/img/minus.png')}}" alt="" />
+              </a>
+            </div>
+            <!-- Precio -->
+            <div class="product-price">${{ item.precio }}</div>
+            <!-- Eliminar producto del carrito -->
+            <div class="product-quit">
+              <a href="{{ url_for('views.eliminar_producto_entero', producto_id=item.id) }}">
+              <img src="{{url_for('static', filename= '/img/close.png')}}" title="Sacar del carrito" />
+            </a>
+            </div>
+            {% endfor %}
+          </div>
 
-                                <div class="product-quant">
-                                    <a class="cart_item_add" href="/{{item.id}}/agregar_carrito">
-                                        <img src="{{url_for('static', filename= '/img/add.png')}}" alt="Añadir" />
-                                    </a>
-                                    <span class="cart_item_quant">{{ item.cantidad }}</span>
-                                    <a class="cart_item_sub" href="{{ url_for('views.eliminar_producto_carrito', producto_id=item.id) }}">
-                                        <img src="{{url_for('static', filename= '/img/minus.png')}}" alt="Restar" />
-                                    </a>
-                                </div>
 
-                                <div class="product-price">{{ item.precio }}</div>
 
-                                <a class="eliminar_item" href="{{ url_for('views.eliminar_producto_carrito', producto_id=item.id) }}">
-                                    <button  type="button" style="font-size: 15px; width: 133px; align-items: center; border: none;">
-                                        Eliminar producto
-                                    </button>
-                                </a>
-                            {% endfor %}
-                            
-                        </div>
-                     
-                        
-                    </div>
-                    
-                   
-                    <div  style="width: 20%; border: 1px solid black; display: flex; justify-content: center; text-align: center; padding-left: 10px; height: 200px;">
-                        <div>
-                            <h5>Total:</h5>
-                            <p>${{ total_final }}</p>
+          <div id="cart-summary-table" class="summary-table">
+            <span class="summary-title">Resumen de la compra
 
-                            {% if carrito != [] %}
-                                <a href="{{ url_for('views.eliminar_carrito') }}">
-                                    <button type="button">
-                                        Borrar carrito
-                                    </button>
-                                </a>
+            </span>
+            <br>
+            <hr>
+            <div class="recipe-coupon">
+              <label>USAR CUPÓN DE DESCUENTO</label>
+              <br>
+              <div class="coupon-code">
+                <input type="text" placeholder="Código">
+                <button class="add-coupon">Añadir</button>
+              </div>
+            </div>
+            <br>
+            <hr class="recipe-hr">
+            <div class="summary-product-prices">
+              <div class="recipe-title">Subtotal</div>
+              <div class="recipe-price">
+                <span>$ precio</span>
+              </div>
+              <div class="recipe-title">Descuentos</div>
+              <div class="recipe-price">
+                <span>$ subtotal</span>
+              </div>
+              <div class="recipe-title">Gastos del envío</div>
+              <div class="recipe-price">
+                <span>$ envio</span>
+              </div>
+              <hr class="recipe-hr">
+              <div class="recipe-title">
+                <span class="total-price">Total</span>
+              </div>
+              <div class="recipe-price">
+                <span class="total-price">$ {{total_final}}</span>
+              </div>
+            </div>
+            <hr class="recipe-hr">
+            <div class="go-confirm-purchase">
+              <a href="{{url_for('views.identificacion')}}">
+                <button>CONFIRMAR COMPRA</button>
+              </a>
+            </div>
+            <div class="continue-shopping"><a href="{{url_for('views.home')}}">O continúa comprando</a>
+            </div>
+          </div>
+         
+        </div>
+      </div>
 
-                                <a href="{{ url_for('views.shipment') }}">
-                                    <button type="button">
-                                        Confirmar carrito
-                                    </button>
-                                </a>
-                            {% endif %}
-                        </div>
-                    </div>
+      <special-footer></special-footer>
+    </div>
+{% block src %}
+    <script src="/shopping-steps.js"></script>
 
-                </div> <!-- Fin main-content -->
-            </div> <!-- Fin product-padre -->
-        </div> <!-- Fin page-wrap -->
-    </div> <!-- Fin contenedor -->
-
-    <special-footer></special-footer>
+  
 {% endblock %}
 
+{% endblock %}
 
-    {% block scr %}
-    <!-- <script src="/shopping-steps.js"></script> -->
-
-   <!--  <script src="/summary-table.js"></script> -->
-    
-    {% endblock  %}
-
+ 
 
 
 

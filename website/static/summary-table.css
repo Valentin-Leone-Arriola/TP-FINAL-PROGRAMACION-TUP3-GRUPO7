@@ -129,24 +129,24 @@
         font-size: 1.25ex;
     }
 
-    cart-summary-table{
+    #cart-summary-table{
         width: 28%;
         margin-right: 8%;
     }
 
-    payment-summary-table{
+    #payment-summary-table{
         width: 35%;
     }
 }
 
 @media (max-width: 430px){
 
-    cart-summary-table{
+    #cart-summary-table{
         width: 95%;
 
     }
 
-    payment-summary-table{
+    #payment-summary-table{
         width: 100%;
     }
 
