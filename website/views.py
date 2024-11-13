@@ -167,7 +167,7 @@ def identificacion():
         producto.cantidad = item.cantidad
         total_final += producto.precio * producto.cantidad
     if request.method == 'POST':
-        redirect(url_for('views.shipment'))
+        return redirect(url_for('views.shipment'))
     
     return render_template('identificacion.html', total_final = total_final)
 

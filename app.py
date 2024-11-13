@@ -20,6 +20,10 @@ def register_js() -> None:
 def summary_table() -> None:
     return send_file('./static/js/summary-table.js')
 
+@app.route('/shopping-steps.js')
+def shopping_steps() -> None:
+    return send_file('./static/js/shopping-steps.js')
+
 with app.app_context():
     db.create_all()
 if __name__ == '__main__':
