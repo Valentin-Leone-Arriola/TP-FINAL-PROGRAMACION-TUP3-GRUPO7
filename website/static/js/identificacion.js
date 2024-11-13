@@ -89,7 +89,7 @@ tel.addEventListener("input", function () {
     if (
         validarCampo(
         errorTel,
-        !tel.value.match(/^(?:\+?54)?\s*9?\s*0?\d{2,4}\s*\d{3}\s*\d{3,5}$/i) || tel.value.length < 10 || tel.value.length > 18,
+        !tel.value.match(/^(?:\+?54)?\s*9?\s*0?\d{2,4}\s*\d{3}\s*\d{3,5}$/i) || tel.value.length < 9 || tel.value.length > 18,
         "El teléfono ingresado no es válido"
         )
     ) {
@@ -135,7 +135,7 @@ form.addEventListener("submit", function (event) {
     }
 
     // Telefono
-    if (!tel.value.match(/^(?:\+?54)?\s*9?\s*0?\d{2,4}\s*\d{3}\s*\d{3,5}$/i) || tel.value.length < 10 || tel.value.length > 18) {
+    if (!tel.value.match(/^(?:\+?54)?\s*9?\s*0?\d{2,4}\s*\d{3}\s*\d{3,5}$/i) || tel.value.length < 9 || tel.value.length > 18) {
     errorTel.innerHTML = "El teléfono ingresado no es válido";
     errores = true;
 
