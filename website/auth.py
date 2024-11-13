@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template,request,flash,redirect,url_for
-from flask_login import  login_required, login_user, logout_user
+from flask_login import  login_required, login_user, logout_user, current_user
 from werkzeug.security import  check_password_hash
+from . import db
 auth = Blueprint('auth', __name__)
 
 
@@ -58,3 +59,21 @@ def sign_up():
 
 
 
+@auth.route('/admin', methods = ['GET', 'POST'])
+@login_required
+def hacer_admin():
+    from . import Usuario
+    if request.method == 'POST':
+        usuario_id = current_user.id
+        usuario = Usuario.query.filter_by(id = usuario_id).first()
+        contrasena = request.form.get('contrasena_admin')
+        if contrasena != '98765':
+            flash('Contraseña invalida', category='error')
+        else:
+            flash('Ahora ese administrador', category='exitoso')
+            usuario.admin = True
+            db.session.commit()
+            
+            return redirect(url_for('views.home'))
+    
+    return render_template('admin_register.html')

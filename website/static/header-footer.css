@@ -110,14 +110,19 @@ a{
 }
 
 /* COMPUTER */
-@media (min-width: 720px){
+@media (min-width: 760px){
 
     
     #menu {
         height: 4vh;
-        width: 33%;
-        align-items: center;
+        width: 38%;
+        display: flex;
         padding-left: 10px;
+        justify-content: space-around;
+
+    }
+    #menu a:hover{
+        text-decoration: underline;
     }
     
     #logo {
@@ -155,9 +160,18 @@ a{
 
 }
 
+/* TABLET? */
+@media (min-width: 430px) and (max-width: 759px){
+    #utilities input{
+        display: none
+    }
+    #menu{
+        padding-left: 10px;
+    }
+}
 
 /* MOBILE */
-@media (max-width: 719px){
+@media (max-width: 430px){
 
     header{
         justify-content: space-between;
@@ -181,7 +195,7 @@ a{
 
     .original-reference{
         /* top: 30vh; */
-        font-size: 80%;
+        font-size: 85%;
         padding: 10px 10px;
     }
 

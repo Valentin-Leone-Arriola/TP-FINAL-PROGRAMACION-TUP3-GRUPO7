@@ -173,23 +173,42 @@ def identificacion():
 @views.route('/agregar', methods=['GET', 'POST'])
 def agregar_producto():
     from . import Producto 
+    productos = Producto.query.all()
+    
     if request.method == 'POST':
+        producto_id = request.form.get('primary_key')
         nombre = request.form.get('nombre')
         img_url = request.form.get('imagen')
-        precio = float(request.form.get('precio'))
-        cantidad = int(request.form.get('cantidad'))
+        precio = request.form.get('precio')
+        cantidad = request.form.get('cantidad')
         
-        if precio<=0:
-            flash("El precio y la cantidad deben ser mayores a 0", category = 'error')
-        elif cantidad<=0:
-            flash("El precio y la cantidad deben ser mayores a 0", category = 'error')
+        
+        if producto_id:
+            producto_id = int(producto_id)
+            producto = Producto.query.filter_by(id = producto_id).first()
+            if nombre:
+                producto.nombre = nombre
+            if img_url:
+                producto.img_url = img_url
+            if cantidad:
+                producto.cantidad = cantidad
+            if precio:
+                producto.precio = precio
+            db.session.commit()   
+            return redirect(url_for('views.agregar_producto'))
         else:
-            flash("Producto agregado exitosamente", category = 'exitoso')
-            nuevo_producto = Producto(nombre, img_url, precio, cantidad)
-            nuevo_producto.guardarProducto()
-            print(nuevo_producto.id)
+            precio = float(precio)
+            cantidad = int(cantidad)
+            if precio<=0:
+                flash("El precio y la cantidad deben ser mayores a 0", category = 'error')
+            elif cantidad<=0:
+                flash("El precio y la cantidad deben ser mayores a 0", category = 'error')
+            else:
+                flash("Producto agregado exitosamente", category = 'exitoso')
+                nuevo_producto = Producto(nombre, img_url, precio, cantidad)
+                nuevo_producto.guardarProducto()
 
-    return render_template('agregar_producto.html')
+    return render_template('agregar_producto.html', productos = productos)
         
         
 @views.route('/eliminar', methods = ['GET', 'POST'])

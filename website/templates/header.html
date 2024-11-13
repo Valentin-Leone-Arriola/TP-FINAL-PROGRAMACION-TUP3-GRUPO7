@@ -5,7 +5,14 @@
 
     <div id="menu">
         {% if current_user.is_authenticated %}
+        {% if current_user.admin == true %}
+        <p>Admin. {{current_user.nombre}}  </p>         
+        <a href="{{url_for('views.eliminar')}}">Eliminar producto</a>
+        <a href="{{url_for('views.agregar_producto')}}">Agregar/Actualizar producto</a>
+        {% else %}
         <p> Hola, {{current_user.nombre}} </p>
+        <a href="{{url_for('auth.hacer_admin')}}">Convertir en administrador</a>
+        {% endif %}
         {% endif %}
        <!--  <a href="./developing-menu.html">
             <img src="./resources/img/menu.png" alt="menu" title="Menu">
