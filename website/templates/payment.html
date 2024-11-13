@@ -34,13 +34,21 @@
             <div class="confirming-shopping-steps">
 
                 <div class="cart-steps-table">
-                    <p><span class="shopping-confirm-number">1.</span> <span class="shopping-confirm-title">Identificación</span></p>
+                  <p><span class="shopping-confirm-number">1.</span> <span class="shopping-confirm-title">
+                    <a href="{{url_for('views.identificacion')}}">
+                      Identificación
+                    </a>
+                  </span></p>
                 </div>
 
                 <br>
 
                 <div class="cart-steps-table">
-                    <p><span class="shopping-confirm-number">2.</span> <span class="shopping-confirm-title">Envío</span></p>
+                    <p><span class="shopping-confirm-number">2.</span> <span class="shopping-confirm-title">
+                      <a href="{{url_for('views.shipment')}}">
+                        Envío
+                      </a>
+                    </span></p>
                 </div>
 
                 <br>
@@ -84,7 +92,7 @@
             <div class="summary-product-prices">
               <div class="recipe-title">Subtotal</div>
               <div class="recipe-price">
-                <span>$ precio</span>
+                <span>$ {{total_final}}</span>
               </div>
               <div class="recipe-title">Descuentos</div>
               <div class="recipe-price">

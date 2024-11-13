@@ -32,37 +32,42 @@
         <div id="payment-body-cont" class="body-cont">
             <div class="confirming-shopping-steps">
 
-                <div class="cart-steps-table">
+                <!-- <form id="form" class="cart-steps-table"> -->
+                <div id="form" class="cart-steps-table">
                     <p><span class="shopping-confirm-number">1.</span> <span class="shopping-confirm-title">Identificación</span></p>
                     <br>
                     Solicitamos unicamente la informacion personal para la finalizacion de la compra
                     <br><br>
                     <label>Correo:</label>
                     <br>
-                    correo@example.com.ar
+                    {{ current_user.email }}
                     <br><br>
                     <div class="dobleInput">
                         <div class="input-cont">
                             <label>Nombre/s</label>
                             <br>
-                            <input type="text" required>
+                            <input id="nombre" type="text">
+                            <div id="error-nombre" class="error-text"></div>
                         </div>
 
                         <div class="input-cont">
                             <label>Apellido/s</label>
                             <br>
-                            <input type="text" required>
+                            <input id="apellido" type="text">
+                            <div id="error-apellido" class="error-text"></div>
                         </div>  
 
                         <div class="input-cont">
                             <label>DNI (sin puntos ni guiones)</label>
                             <br>
-                            <input type="number" required>
+                            <input id="dni" type="number">
+                            <div id="error-dni" class="error-text"></div>
                         </div>
                         <div class="input-cont">
                             <label>Telefono / Celular</label>
                             <br>
-                            <input type="tel" required>
+                            <input id="tel" type="text">
+                            <div id="error-tel" class="error-text"></div>
                         </div>  
                     </div> 
                     <br>
@@ -72,7 +77,8 @@
                         </a>
                     </div>
                     
-                </div>
+                  </div>
+                <!-- </form> -->
 
                 <br>
 
@@ -107,11 +113,11 @@
             <div class="summary-product-prices">
               <div class="recipe-title">Subtotal</div>
               <div class="recipe-price">
-                <span>$ precio</span>
+                <span>$ {{total_final}}</span>
               </div>
               <div class="recipe-title">Descuentos</div>
               <div class="recipe-price">
-                <span>$ subtotal</span>
+                <span>$ subtotal </span>
               </div>
               <div class="recipe-title">Gastos del envío</div>
               <div class="recipe-price">
@@ -131,7 +137,7 @@
          
         </div>
       </div>
-               <!--  <payment-summary-table></payment-summary-table> -->
+                <!-- <payment-summary-table></payment-summary-table> -->
             
         </div>
     </div>
@@ -140,8 +146,8 @@
 </div>
 
 {% block src %}
-<script src="/shopping-steps.js"></script>
-
+  <script src="/shopping-steps.js"></script>
+  <script src="/identificacion.js"></script>
 {% endblock %}
 
 {% endblock %}

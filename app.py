@@ -8,6 +8,10 @@ app = create_app()
 def index_js() -> None:
     return send_file('./static/js/index.js')
 
+@app.route('/identificacion.js')
+def identificacion_js() -> None:
+    return send_file('./static/js/identificacion.js')
+
 @app.route('/register.js')
 def register_js() -> None:
     return send_file('./static/js/register.js')

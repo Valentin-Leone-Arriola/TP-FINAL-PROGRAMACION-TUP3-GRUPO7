@@ -49,6 +49,11 @@ body{
     color: rgb(30, 30, 30);
 }
 
+.shopping-confirm-title a:hover{
+    text-decoration: none;
+    color: inherit;
+}
+
 .cart-steps-table{
     border: solid 1px;
     padding: 1em 1.5em;
@@ -105,6 +110,12 @@ input{
     font-size: 2ex;
     width: 50%;
     padding: 1em 0;
+}
+
+.error-text {
+    color: red;
+    font-size: 0.875em;
+    margin-top: 5px;
 }
 
 /* TABLA ENVIO */
