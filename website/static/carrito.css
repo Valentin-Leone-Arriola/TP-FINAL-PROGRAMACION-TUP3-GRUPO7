@@ -91,7 +91,7 @@ body{
 
 
 
-@media (min-width: 820px){
+@media (min-width: 720px){
 
     .product-table{
         position: relative;
@@ -156,7 +156,7 @@ body{
 
 
 /* MOBILE */
-@media (max-width: 430px){
+@media (max-width: 719px){
 
     .product-table{
         position: relative;

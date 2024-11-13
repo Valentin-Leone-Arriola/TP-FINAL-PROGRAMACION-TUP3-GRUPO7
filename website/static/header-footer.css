@@ -110,7 +110,7 @@ a{
 }
 
 /* COMPUTER */
-@media (min-width: 760px){
+@media (min-width: 720px){
 
     
     #menu {
@@ -155,18 +155,9 @@ a{
 
 }
 
-/* TABLET? */
-@media (min-width: 430px) and (max-width: 759px){
-    #utilities input{
-        display: none
-    }
-    #menu{
-        padding-left: 10px;
-    }
-}
 
 /* MOBILE */
-@media (max-width: 430px){
+@media (max-width: 719px){
 
     header{
         justify-content: space-between;
@@ -190,7 +181,7 @@ a{
 
     .original-reference{
         /* top: 30vh; */
-        font-size: 85%;
+        font-size: 80%;
         padding: 10px 10px;
     }
 

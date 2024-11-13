@@ -117,7 +117,7 @@
     text-decoration: underline;
 }
 
-@media (min-width: 820px){
+@media (min-width: 720px){
     
     .summary-table{
         position: sticky;
@@ -139,7 +139,7 @@
     }
 }
 
-@media (max-width: 430px){
+@media (max-width: 719px){
 
     #cart-summary-table{
         width: 95%;
@@ -154,6 +154,7 @@
         position: relative;
         left: 2.5%;
         padding: 2.5ex 2ex;
+        margin-bottom: 75px;
     }
         
     .summary-back-to-cart{
